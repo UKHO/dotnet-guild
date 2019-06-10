@@ -37,7 +37,7 @@ Grouping of configuration items should fall out organically as development proce
 
 Full example in OptionsPatternExamples solution, which includes the nested configurations.
 
-Code examples tested with .NET 4.7.1 and C# 7.3.
+Code examples tested with .NET 4.7.2 and C# 7.3.
 
 #### Example XML Config
 
