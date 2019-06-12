@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{670CF8D0-B2D9-4E12-91D9-D2F76F7CF602}</ProjectGuid>
+    <ProjectGuid>{57C1F843-2001-446F-840E-779D86177136}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>FrameworkOptionsPatternExample</RootNamespace>
     <AssemblyName>FrameworkOptionsPatternExample</AssemblyName>
@@ -34,13 +34,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -56,14 +56,14 @@
   <ItemGroup>
     <Compile Include="ConfigExtensions.cs" />
     <Compile Include="Config\ConnectionStringConfiguration.cs" />
+    <Compile Include="Config\LoggingConfiguration.cs" />
+    <Compile Include="Config\XmlConfig.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Interfaces\IConnectionStringConfiguration.cs" />
     <Compile Include="Interfaces\ILoggingConfiguration.cs" />
-    <Compile Include="Config\LoggingConfiguration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Config\XmlConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
