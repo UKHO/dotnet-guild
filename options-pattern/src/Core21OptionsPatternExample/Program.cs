@@ -28,9 +28,9 @@ namespace Core21OptionsPatternExample
                                 azureServiceTokenProvider.KeyVaultTokenCallback));
 
                         config.AddAzureKeyVault(
-                            "https://bendemo-kv.vault.azure.net/",
+                            builtConfig["KeyVaultSettings:ServiceUri"],
                             keyVaultClient,
-                            new PrefixKeyVaultSecretManager("Test"));
+                            new PrefixKeyVaultSecretManager(builtConfig["KeyVaultSettings:Environment"]));
                     }
                 })
                 .UseStartup<Startup>();
