@@ -264,13 +264,13 @@ We would add the environment variable using the key: ```MyEnvVarsSection```.
 
 ### Azure Key Vault and naming conventions
 
-AKV only accepts dashes and alphanumerics and there is no automatic conversion for those in the ```Configuration``` API. The solution is to use a `KeyVaultSecretManager` from the [Key Vault documentation](https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1), which replaces the '--' with a ':'.
+AKV only accepts dashes and alphanumerics and there is no automatic conversion for those in the ```Configuration``` API. The solution is to use `IKeyVaultSecretManager` from the [Key Vault documentation](https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1), which replaces the '--' with a ':'.
 
 `PrefixKeyVaultSecretManager` is particularly useful if we need more control over secrets prefixes for example: 
 - using an `{Environment}` prefix for secret names, when having one master Key Vault for all environments
 - using an `{Application_Version}` prefix to allow having different secrets for different versions of the application
 
-If using one Key Vault per environment and no additional control over prefixes is needed, `DefaultKeyVaultSecretManager` is sufficient, as it also replaces the '--' with a ':'
+If using one Key Vault per environment and no additional control over prefixes is needed, `DefaultKeyVaultSecretManager` is sufficient.
 
 For the POCO:
 
