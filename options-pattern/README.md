@@ -404,7 +404,7 @@ services.AddOptions<MySettings>()
 
 In the above, we're throwing an exception with all of the errors combined from validating annotations and calling the ```Validate``` function on the POCO.
 
-#### Extension method fir validating via annotations
+#### Extension method for validating via annotations
 
 (From unknown stackoverflow.com source).
 
