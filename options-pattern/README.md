@@ -344,7 +344,7 @@ As detailed earlier, there are 3 choices. You can use a mix of them.
 - ```IOptionsSnapshot<>```
 - ```IOptionsMonitor<>```
 
-Typically you will use ```IOptionsSnapshot<>``` as follows. Note you do need to access the ```Value``` property.
+Typically you will use ```IOptionsSnapshot<>``` as follows. Notice that you do need to access the ```Value``` property to get a reference to the actual POCO instantiation.
 
 ```csharp
 public class HomeController : Controller
@@ -358,7 +358,11 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var configValue = _mySettings.Value;
+        var mySettingsObject = _mySettings.Value;
+
+        var myEnvString = mySettingsObject.MyEnvString;
+        var myBool = mySettingsObject.MyBool;
+        // etc...
 
         return View();
     }

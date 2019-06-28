@@ -17,7 +17,11 @@ namespace Core21OptionsPatternExample.Controllers
 
         public IActionResult Index()
         {
-            var configValue = _mySettings.Value;
+            var mySettingsObject = _mySettings.Value;
+
+            var myEnvString = mySettingsObject.MyEnvString;
+            var myBool = mySettingsObject.MyBool;
+            // etc...
 
             return View();
         }
