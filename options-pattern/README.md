@@ -264,7 +264,13 @@ We would add the environment variable using the key: ```MyEnvVarsSection```.
 
 ### Azure Key Vault and naming conventions
 
-AKV only accepts dashes and alphanumerics and there is no automatic conversion for those in the ```Configuration``` API. The solution is to use ```PrefixKeyVaultSecretManager``` from the [Key Vault documentation](https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1), which assists with the prefix and more importantly, replaces the '--' with a ':'.
+AKV only accepts dashes and alphanumerics and there is no automatic conversion for those in the ```Configuration``` API. The solution is to use a `KeyVaultSecretManager` from the [Key Vault documentation](https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1), which replaces the '--' with a ':'.
+
+`PrefixKeyVaultSecretManager` is particularly useful if we need more control over secrets prefixes for example: 
+- using an `{Environment}` prefix for secret names, when having one master Key Vault for all environments
+- using an `{Application_Version}` prefix to allow having different secrets for different versions of the application
+
+If using one Key Vault per environment and no additional control over prefixes is needed, `DefaultKeyVaultSecretManager` is sufficient, as it also replaces the '--' with a ':'
 
 For the POCO:
 
@@ -276,7 +282,9 @@ For the POCO:
     }
 ```
 
-A typical Key Vault key name might look like: {prefix}--{section}--{key} e.g. Dev--MySecretSection--MySecretString
+A typical Key Vault key name might look like: 
+- {prefix}--{section}--{key} e.g. Dev--MySecretSection--MySecretString (for `PrefixKeyVaultSecretManager`)
+- {section}--{key} e.g. MySecretSection--MySecretString (for `DefaultKeyVaultSecretManager`)
 
 ### Step 2 - Registering the specific configurations a TOptions POCO will bind to
 
