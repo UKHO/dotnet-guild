@@ -14,7 +14,7 @@ This guide covers the rationale for the options pattern. It also provides exampl
 
 ## Benefits
 
-**Less string literals**: No repeating of string literals (keys) throughout code, which aids refactoring tools and reduces typing errors.
+**Fewer string literals**: No repeating of string literals (keys) throughout code, which aids refactoring tools and reduces typing errors.
 
 **Type-safety**: A single location to parse string values to strongly-typed properties (the single benefit of using schema languages to enforce type-safety would not give good ROI).
 
