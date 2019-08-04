@@ -37,3 +37,4 @@ This guide covers the rationale for the options pattern. It also provides exampl
 - [Jump to ASP .NET Core 2.1 example](docs/netcore21.md)
 - [Jump to Full Framework example](docs/netfx.md)
 - [Jump to .NET Core 2.1 Generic Host service example](docs/netcore21generichost.md)
+- [Jump to .NET Core 2.1 'roll your own' example](docs/netcore21diy.md)
