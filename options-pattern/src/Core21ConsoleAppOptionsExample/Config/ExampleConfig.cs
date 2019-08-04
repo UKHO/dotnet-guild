@@ -3,5 +3,6 @@
     public class ExampleConfig
     {
         public string MyString { get; set; }
+        public string MySecretString { get; set; }
     }
 }
