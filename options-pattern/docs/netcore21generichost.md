@@ -8,6 +8,8 @@ For this we utilise `IHost` and `HostBuilder`.
 
 A console service could, for example, get all of its settings from Azure App Configuration (in preview at time of writing) and Azure Key Vault.
 
+Note, this requires the managed service identity set for the app registration and permissions set for the developer running it.
+
 ```csharp
 private static async Task Main(string[] args)
     {
