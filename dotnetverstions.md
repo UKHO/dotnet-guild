@@ -11,9 +11,14 @@ You should no longer be using:
 - .NET Core 1.0 and 1.1 ended support 27 June 2019 and should now be on either 2.1 or 2.2.
 - .NET Core 2.0 ended support 1 October 2018 and should now be on either 2.1 or 2.2.
 
-Recommended for new work:
+Currently recommended for new work:
 
 - The current Long-Term Support (LTS) release .NET Core 2.1.
+
+Recommended for new work from ~ November 2019:
+
+- C# 8.0 will only be supported in Core 3.0 onwards
+- Core 3.1 will be the next LTS, dropping around November 2019
 
 ## Contacts
 
@@ -21,9 +26,11 @@ Recommended for new work:
 
 ## The Long-Term Support Path
 
-.NET Core 2.1 is the stable Long-Term Support (LTS) release, supported to around August 2021. 
+.NET Core 2.1 is the stable Long-Term Support (LTS) release, supported to around August 2021.
 
-Currently recommended for all new projects, particularly applications that won't be updated often. .NET 3.1 will be the next LTS release, dropping around November 2019, with 2.1 support cover until August 2021 to upgrade. Expect to move to Core 2.1 with C# 8.0 as the default for new work from November 2019.
+Currently recommended for all new projects, particularly applications that won't be updated often. .NET 3.1 will be the next LTS release, dropping around November 2019, with 2.1 support cover until August 2021 to upgrade.
+
+Expect to move to Core 2.1 with C# 8.0 as the default for new work from November 2019 where there are not dependencies.
 
 Although it is disappointing not being able to adopt C# 8.0 at its release in September 2019, it would be prudent to develop for Core 2.1 but design with a 3.x upgrade in mind and wait to do so until LTS 3.1 drops (currently pencilled in for November 2019). This gives the framework time to stablise; and for Azure DevOps, Azure Cloud, developer tooling and third-party libraries to catch up.
 
