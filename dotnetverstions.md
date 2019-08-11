@@ -17,8 +17,8 @@ Currently recommended for new work:
 
 Recommended for new work from ~ November 2019:
 
-- C# 8.0 will only be supported in Core 3.0 onwards
 - Core 3.1 will be the next LTS, dropping around November 2019
+- **Note: C# 8.0 will only be supported in Core 3.0 (and Standard 2.1) onwards**
 
 ## Contacts
 
@@ -38,7 +38,7 @@ Although it is disappointing not being able to adopt C# 8.0 at its release in Se
 
 .NET Core 2.2 is a ‘Current’ release. Based on known dates from Microsoft, to remain in support, 2.2 applications would need to be upgraded to 3.0 by around December 2019, 3 months after release; and again, around February 2020 up to 3.1.
 
-As of .NET Core 3.0 Preview 7, Core 3.0 'is supported by Microsoft and can be used in production'. I also have further [confirmation](https://github.com/dotnet/corefx/issues/40039) that **C# 8.0 will only be supported in Standard 2.1 and of course .NET Core 3.0**.
+As of .NET Core 3.0 Preview 7, Core 3.0 'is supported by Microsoft and can be used in production'. I also have further [confirmation](https://github.com/dotnet/corefx/issues/40039) that C# 8.0 will only be supported in Standard 2.1 and of course .NET Core 3.0.
 
 If you start using 3.0 Preview 7, you must still plan to upgrade to 3.0 GA and then again to 3.1 over a relatively short period. Only use this if you can resource this manual update cadence that follows.
 
