@@ -43,7 +43,7 @@ Given the restricted availability C# 8.0, we cannot not flatly rule out adopting
 
 Note that ASP .NET Core 3.x is not going to run on Framework, so definitely do not upgrade anything to 2.2 that you wish to continue running on Framework.
 
-There might be implications for our Core applications currently running on Framework, when 2.1 goes out of support. Not sure yet - there is extended support for running ASP.NET Core 2.1 on Framework that would see ASP.NET Core 2.1 related packages being supported indefinitely. We'll have to wait and see; their intention is still for everyone to full migrate.
+There might be implications for our Core applications currently running on Framework, when 2.1 goes out of support. Not sure yet - there is extended support for running ASP .NET Core 2.1 on Framework that would see ASP .NET Core 2.1 related packages being supported indefinitely. We'll have to wait and see; their intention is still for everyone to full migrate.
 
 ## When to upgrade 2.1 and 2.2 applications
 
