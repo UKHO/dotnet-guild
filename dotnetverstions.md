@@ -30,7 +30,7 @@ Recommended for new work from ~ November 2019:
 
 Currently recommended for all new projects, particularly applications that won't be updated often. .NET 3.1 will be the next LTS release, dropping around November 2019, with 2.1 support cover until August 2021 to upgrade.
 
-Expect to move to Core 2.1 with C# 8.0 as the default for new work from November 2019 where there are not dependencies.
+Expect to move to Core 3.1 with C# 8.0 as the default for new work from November 2019 where there are not dependencies.
 
 Although it is disappointing not being able to adopt C# 8.0 at its release in September 2019, it would be prudent to develop for Core 2.1 but design with a 3.x upgrade in mind and wait to do so until LTS 3.1 drops (currently pencilled in for November 2019). This gives the framework time to stablise; and for Azure DevOps, Azure Cloud, developer tooling and third-party libraries to catch up.
 
