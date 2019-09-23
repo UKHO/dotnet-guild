@@ -6,23 +6,26 @@ Remember, no support means no security updates!
 
 ## TL;DR
 
-You should no longer be using:
+### Existing applications
+
+Upgrades required for keeping support:
 
 - .NET Core 1.0 and 1.1 ended support 27 June 2019 and should now be on either 2.1 or 2.2.
 - .NET Core 2.0 ended support 1 October 2018 and should now be on either 2.1 or 2.2.
+- You have until the end of 2019 to upgrade any 2.2 applications to 3.0 before you lose support.
 
-Currently recommended for new work going live before 2020:
+There is no need, if you don't need any 3.0 features, to upgrade any .NET Framework applications - it is not going anywhere.
 
-- The current Long-Term Support (LTS) release .NET Core 2.1.
+### For new work
 
-Recommended for new projects from ~ November 2019:
+If you can resource an upgrade to 3.1 for Long-Term Support (LTS) between November 2019 and January 2020.
 
-- Core 3.1 will be the next LTS, dropping around November 2019
-- **Note: C# 8.0 will only be supported in Core 3.0 (and Standard 2.1) onwards**
+- Start all new work in Core 3.0
+- Note, C# 8.0 will only be supported in Core 3.0 (and Standard 2.1) onwards
 
-Acceptable for new work not going live until 2020 if you can resource upgrades:
+Otherwise for LTS to August 2021:
 
-- Core 2.2, upgrading to 3.0 then to 3.1
+- Use the current LTS release .NET Core 2.1.
 
 ## Contacts
 
@@ -32,29 +35,17 @@ Acceptable for new work not going live until 2020 if you can resource upgrades:
 
 .NET Core 2.1 is the stable Long-Term Support (LTS) release, supported to around August 2021.
 
-Currently recommended for all new projects, particularly applications that won't be updated often. .NET 3.1 will be the next LTS release, dropping around November 2019, with 2.1 support cover until August 2021 to upgrade.
-
-Expect to move to Core 3.1 with C# 8.0 as the default for new work from November 2019 where there are not dependencies.
-
-Although it is disappointing not being able to adopt C# 8.0 at its release in September 2019, it would be prudent to develop for Core 2.1 but design with a 3.x upgrade in mind and wait to do so until LTS 3.1 drops (currently pencilled in for November 2019). This gives the framework time to stablise; and for Azure DevOps, Azure Cloud, developer tooling and third-party libraries to catch up.
+If an application is on 2.1, you do not need to upgrade to 3.0 until the LTS expires but if you do need 3.x features you probably want to wait for the next LTS release .NET 3.1, dropping around November 2019.
 
 ## The ‘Current’ Path
 
-.NET Core 2.2 is a ‘Current’ release. Based on known dates from Microsoft, to remain in support, 2.2 applications would need to be upgraded to 3.0 by around December 2019, 3 months after release; and again, around February 2020 up to 3.1.
-
-As of .NET Core 3.0 Preview 7, Core 3.0 'is supported by Microsoft and can be used in production'. I also have further [confirmation](https://github.com/dotnet/corefx/issues/40039) that C# 8.0 will only be supported in Standard 2.1 and of course .NET Core 3.0.
-
-If you start using 3.0 Preview 7, you must still plan to upgrade to 3.0 GA and then again to 3.1 over a relatively short period. Only use this if you can resource this manual update cadence that follows.
-
-Not enough information on support in Azure DevOps, Azure Cloud, developer tooling and third party libraries. Currently have to develop in VS 2019 Preview 7 (or higher).
-
-Given the restricted availability C# 8.0, we cannot not flatly rule out adopting 3.0 for new work from Preview 7 onwards in the exceptional case, where we know that code will not be in production until 3.0 GA has had enough time to drop (currently pencilled in for September 2019). Although do not expect it to be stable until 3.1.
+.NET Core 2.2 is a ‘Current’ release so to remain in support, 2.2 applications would need to be upgraded to 3.0 by around December 2019; and upgraded again, around February 2020 up to 3.1.
 
 ## Future of running Core on Framework
 
 Note that ASP .NET Core 3.x is not going to run on Framework, so definitely do not upgrade anything to 2.2 that you wish to continue running on Framework.
 
-There might be implications for our Core applications currently running on Framework, when 2.1 goes out of support. Not sure yet - there is extended support for running ASP .NET Core 2.1 on Framework that would see ASP .NET Core 2.1 related packages being supported indefinitely. We'll have to wait and see; their intention is still for everyone to full migrate.
+There might be implications for Core applications currently running on Framework, when 2.1 goes out of support. Not sure yet - there is extended support for running ASP .NET Core 2.1 on Framework that would see ASP .NET Core 2.1 related packages being supported indefinitely. We'll have to wait and see; their intention is still for everyone to full migrate.
 
 ## When to upgrade 2.1 and 2.2 applications
 
