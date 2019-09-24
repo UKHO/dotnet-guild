@@ -6,9 +6,13 @@ Remember, no support means no security updates!
 
 ## TL;DR
 
+### C# 8.0
+
+Recommendation for UKHO .NET teams: Do not use any of the features outside of .NET Core 3.x and Standard 2.1+ projects.
+
 ### Existing applications
 
-Upgrades required for keeping support:
+Upgrades required to stay in support:
 
 - .NET Core 1.0 and 1.1 ended support 27 June 2019 and should now be on either 2.1 or 2.2.
 - .NET Core 2.0 ended support 1 October 2018 and should now be on either 2.1 or 2.2.
@@ -16,16 +20,18 @@ Upgrades required for keeping support:
 
 There is no need, if you don't need any 3.0 features, to upgrade any .NET Framework applications - it is not going anywhere.
 
+There is no pressing need to upgrade Core 2.1 apps. These are in support until at leas August 2021.
+
 ### For new work
 
-If you can resource an upgrade to 3.1 for Long-Term Support (LTS) between November 2019 and January 2020.
+If you can resource an upgrade to 3.1 for Long-Term Support (LTS) between November 2019 and January 2020:
 
 - Start all new work in Core 3.0
-- Note, C# 8.0 will only be supported in Core 3.0 (and Standard 2.1) onwards
+- Note, C# 8.0 will only be **supported** in Core 3.0 (and Standard 2.1) onwards
 
-Otherwise for LTS to August 2021:
+Otherwise:
 
-- Use the current LTS release .NET Core 2.1.
+- Use the current LTS release .NET Core 2.1 with LTS to August 2021
 
 ## Contacts
 
@@ -50,3 +56,11 @@ There might be implications for Core applications currently running on Framework
 ## When to upgrade 2.1 and 2.2 applications
 
 Any planned work to upgrade existing 2.x applications to 3.x should be delayed until the LTS 3.1 release, given the short support period (to February 2020) that will accompany 3.0.
+
+## Advice on using C# 8 features
+
+C# 8.0 features are only officially supported in Core 3.0 (and Standard 2.1) onwards.
+
+A number of them work fully or partially in .NET Framework and .NET Core 2.1 and 2.2 with some manual project tweaking.
+
+I advising against using these features outside of .NET Core 3.0.
