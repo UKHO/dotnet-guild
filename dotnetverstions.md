@@ -16,11 +16,11 @@ Upgrades required to stay in support:
 
 - .NET Core 1.0 and 1.1 ended support 27 June 2019 and should now be on either 2.1 or 2.2.
 - .NET Core 2.0 ended support 1 October 2018 and should now be on either 2.1 or 2.2.
-- You have until the end of 2019 to upgrade any 2.2 applications to 3.0 before you lose support.
+- You have until 23 December 2019 to upgrade any 2.2 applications to 3.0 before you lose support.
 
 There is no need, if you don't need any 3.0 features, to upgrade any .NET Framework applications - it is not going anywhere.
 
-There is no pressing need to upgrade Core 2.1 apps. These are in support until at leas August 2021.
+There is no pressing need to upgrade Core 2.1 apps. These are in support until at least August 2021.
 
 ### For new work
 
