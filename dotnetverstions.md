@@ -63,4 +63,4 @@ C# 8.0 features are only officially supported in Core 3.0 (and Standard 2.1) onw
 
 A number of them work fully or partially in .NET Framework and .NET Core 2.1 and 2.2 with some manual project tweaking.
 
-I advising against using these features outside of .NET Core 3.0.
+I'm advising against using these features outside of .NET Core 3.0.
