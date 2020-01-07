@@ -10,7 +10,7 @@ Remember, no support means no security updates!
 
 - .NET Framework support for 4, 4.5 and 4.5.1 ended in 2016 and you should be on 4.5.2 or greater, 2.0, 3.0 or 3.5 SP1. See the [.NET Framework Lifecycle FAQ for more details](https://support.microsoft.com/en-gb/help/17455/lifecycle-faq-net-framework).
 
-There is no need, if you don't need any Core 3.x features, to upgrade any .NET Framework applications - it is not going anywhere. Microsoft still endeavour not to make breaking changes so it is safe to upgrade to the latest versions, which is 4.8.
+There is no need, if you don't need any Core 3.x features, to upgrade any .NET Framework applications - it is not going anywhere. Microsoft still endeavour not to make breaking changes so it us usually safe to upgrade to the latest version with regression testing (4.8 currently).
 
 .NET Core upgrades required to stay in support:
 
