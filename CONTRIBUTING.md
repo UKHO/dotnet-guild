@@ -1,4 +1,4 @@
-# Contributing to the UKHO C# Guild Repo
+# Contributing to the UKHO .NET Developers Guild Repo
 
 Firstly, thank you for taking the time to contribute.
 
