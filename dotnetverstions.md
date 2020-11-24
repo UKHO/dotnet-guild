@@ -95,8 +95,6 @@ Benefits of migrating:
 
 But that last point really is a guess. **The official line from Microsoft is still: Not to upgrade NETFx applications that are in 'maintenance mode'.** If this advice results in large numbers of applications remaining on NETFx, then third party support is likely to continue also.
 
-But that last point really is a guess. **The official line from Microsoft is still: Not to upgrade NETFx applications that are in 'maintenance mode'.** If this advice results in large numbers of applications remaining on NETFx, then third party support is likely to continue also.
-
 Arguments against migrating off NETFx:
 
 - 4.8 is in support until at least 01/09/2029.
