@@ -151,11 +151,11 @@ The LTS for .NET vNext is .NET 6, which is set to reach GA November 2021 and wil
 
 ### 2.4 Keeping Core patched with servicing updates
 
-Self-contained: One of the benefits of Core is the ability to have side-by-side installations of runtime versions. As of Core 3.x it is also possible to distribute self-contained executables that include the required Core runtime. The negative to both of these it that it remains a development tea, responsibility to ensure runtime updates occur.
+Self-contained: One of the benefits of Core is the ability to have side-by-side installations of runtime versions. As of Core 3.x it is also possible to distribute self-contained executables that include the required Core runtime. The negative to both of these it that it remains a development team responsibility to ensure runtime updates occur.
 
 Azure App Service: These will be patched automatically.
 
-Core installed centrally on a machine: Currently this a development team responsibility. Soon this will be an opt-in functionality via Microsoft Update channels. There is an [open issue on GitHub](https://github.com/dotnet/core/issues/5013) for work in progress and a blog post detailing it fully is expected in December 2020.
+Core installed centrally on a machine: Currently this a development team responsibility. Soon this will be an opt-in functionality via Microsoft Update channels. There is an [open issue on GitHub](https://github.com/dotnet/core/issues/5013) for this work. A blog post detailing it fully, is expected in December 2020.
 
 ### 2.5. Summary of recommendations for .NET Core applications
 
