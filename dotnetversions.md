@@ -155,7 +155,7 @@ Self-contained: One of the benefits of Core is the ability to have side-by-side 
 
 Azure App Service: These will be patched automatically.
 
-Core installed centrally on a machine: Currently this a development team responsibility. Soon this will be an opt-in functionality via Microsoft Update channels. There is an [open issue on GitHub](https://github.com/dotnet/core/issues/5013) for this work. A blog post detailing it fully, is expected in December 2020.
+Core installed centrally on a machine: .NET Core and .NET 5 servicing updates can now be installed automatically on Windows, through Microsoft Update [see this post](https://failingfast.io/dotnet-core-automatic-windows-updates/).
 
 ### 2.5. Summary of recommendations for .NET Core applications
 
