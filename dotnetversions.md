@@ -12,15 +12,15 @@
     - [1.3.4 Migrating from  .NET Framework (NETFx) to .NET vNext](#134-migrating-from--net-framework-netfx-to-net-vnext)
   - [1.4. Summary of recommendations for .NET Framework (NETFx) applications](#14-summary-of-recommendations-for-net-framework-netfx-applications)
 - [2. Existing .NET Core Applications](#2-existing-net-core-applications)
-  - [2.1 Currently supported Core LTS versions](#21-currently-supported-core-lts-versions)
+  - [2.1 Currently supported .NET 5+ or .NET Core versions](#21-currently-supported-net-5-or-net-core-versions)
   - [2.2 Core versions out of support](#22-core-versions-out-of-support)
   - [2.3 .NET vNext](#23-net-vnext)
   - [2.4 Keeping Core patched with servicing updates](#24-keeping-core-patched-with-servicing-updates)
   - [2.5. Summary of recommendations for .NET Core applications](#25-summary-of-recommendations-for-net-core-applications)
 - [3. For new work](#3-for-new-work)
 - [4. Shared code libraries](#4-shared-code-libraries)
-  - [What to target for a mix of NETFx, Core 2.1, Core 3.1 and .NET 5](#what-to-target-for-a-mix-of-netfx-core-21-core-31-and-net-5)
-  - [What to target for a mix of .NET Core 3.1 / .NET 5](#what-to-target-for-a-mix-of-net-core-31--net-5)
+  - [What to target for a mix of NETFx, Core 3.1 and .NET 5+](#what-to-target-for-a-mix-of-netfx-core-31-and-net-5)
+  - [What to target for a mix of .NET Core 3.1 / .NET 5+](#what-to-target-for-a-mix-of-net-core-31--net-5)
 - [5. Future of running Core on the Framework](#5-future-of-running-core-on-the-framework)
 - [6. C# versions](#6-c-versions)
 
@@ -82,7 +82,7 @@ A lot of unexpected behaviour from using the new runtime can be caught earlier b
 
 #### 1.3.4 Migrating from  .NET Framework (NETFx) to .NET vNext
 
-The decision whether or not to migrate to .NET Core or .NET 5+ from .NET 4.x should be made on a case-by-case basis. The most important thing is to have a road-map for every application, particularly those which are mission-critical. The following summary can be used to assist in decision making.
+The decision whether or not to migrate to .NET Core or .NET 6 from .NET 4.x should be made on a case-by-case basis. The most important thing is to have a road-map for every application, particularly those which are mission-critical. The following summary can be used to assist in decision making.
 
 Benefits of migrating:
 
@@ -106,31 +106,18 @@ Consider options of breaking systems up and migrating smaller parts.
 
 If the application is likely to expire or move into maintenance-only mode before 2023 (thus there there are no requirements for the features or performance offered by Core and .NET vNext), then remain on the .NET Framework and upgrade to the latest 4.x. Re-targeting as well as a runtime upgrade, will ensure the application can use more shared code and be in a good position to migrate if circumstances change.
 
-If an application's own lifecycle comfortably extends into 2023 with new features in the pipeline, then plan a migration away from NETfx. Whether this is directly to Core 3.1, .NET 5 or .NET 6, or on an upgrade schedule, will depend on timescales and other resources available. A 'stepping stone' approach is naturally safer but note that .NET 5 is not LTS so an upgrade will be forced, probably around by January 2022 (3 months after v6 LTS is released).
+If an application's own lifecycle comfortably extends into 2024 with new features in the pipeline, then plan a migration away from NETfx. As of November 2021, this should be directly to .NET 6, which will be support until November 2024.
 
-A road-map for to .NET 6 while remaining on LTS:
-
-1. .NET 4.x -> Core 3.1
-2. Core 3.1 -> .NET 6 (between .NET 6 release ~10/11/2021 and 3.1 support end 03/12/2022)
-
-With larger applications, it is safer to upgrade in stages from 4.x to Core 3.1 in development, to make better use of the migration guides e.g. for ASP.NET https://docs.microsoft.com/en-us/aspnet/core/migration/proper-to-2x/?view=aspnetcore-3.1.
-
-An alternative road-map to .NET 6 (LTS) with smaller upgrade windows on the 'current train':
-
-1. .NET 4.x -> .NET 5 (non-LTS)
-2. .NET 5 -> .NET 6 (support for .NET 5 ends 3 months after .NET 6 is released ~10/11/2021)
+Make use of the migration guides e.g. [for ASP.NET](https://docs.microsoft.com/en-us/aspnet/core/migration/50-to-60?view=aspnetcore-3.1&tabs=visual-studio).
 
 ## 2. Existing .NET Core Applications
 
-The road-maps for applications targeting .NET Core will look different for a couple of reasons:
+The road-maps for applications targeting .NET Core 3.1 or .NET 5 will be the similar. Both should have planned upgrades to .NET 6 but within different time windows depending on when their support expires.
 
-- Shorter support periods so upgrading is forced.
-- The move from Core 3.1 in particular to .NET 5 is trivial and we have expertise for migrating from 2.1 to 3.1 already across the teams.
+### 2.1 Currently supported .NET 5+ or .NET Core versions
 
-### 2.1 Currently supported Core LTS versions
-
-- .NET Core 3.1. Supported until 03/12/2022
-- .NET Core 2.1. Supported until 21/08/2021
+- .NET Core 3.1 is supported until 03/12/2022.
+- .NET 5 is supported until around May 2022.
 
 For more details and to check latest patch version see the [.NET Core and .NET Support Policy](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).
 
@@ -138,17 +125,13 @@ For more details and to check latest patch version see the [.NET Core and .NET S
 
 All other .NET Core 2.x and 3.x versions are out of support.
 
-Applications on Core 2.2, where 3.1 is not an option because of dependencies, will need to downgrade to 2.1.
-
 ### 2.3 .NET vNext
 
-The GA .NET 5 will be released 10 November 2020 and is likely to go out of support around January 2022.
-
-The LTS for .NET vNext is .NET 6, which is set to reach GA November 2021 and will receive support until around January 2024.
+.NET 7 is a 'Current' release, dropping around November 2022. It is likely to go out of support around January 2023.
 
 ### 2.4 Keeping Core patched with servicing updates
 
-Self-contained: One of the benefits of Core is the ability to have side-by-side installations of runtime versions. As of Core 3.x it is also possible to distribute self-contained executables that include the required Core runtime. The negative to both of these it that it remains a development team responsibility to ensure runtime updates occur.
+Self-contained: One of the benefits of Core (and .NET 5+) is the ability to have side-by-side installations of runtime versions. As of Core 3.x it is also possible to distribute self-contained executables that include the required Core runtime. The negative to both of these it that it remains a development team responsibility to ensure runtime updates occur.
 
 Azure App Service: These will be patched automatically.
 
@@ -156,48 +139,50 @@ Core installed centrally on a machine: .NET Core and .NET 5 servicing updates ca
 
 ### 2.5. Summary of recommendations for .NET Core applications
 
+A road-map for remaining on LTS:
+
+1. Core 3.1 -> .NET 6 (upgrade window November 2021 to 03/12/2022)
+2. .NET 5 -> .NET 6 (upgrade window November 2021 to May 2022)
+3. .NET 6 -> .NET 8 (upgrade window November 2023 to November 2025)
+
 A road-map for jumping on and off the 'current train' (includes non-LTS releases):
 
-1. Core 2.1 -> Core 3.1 (before 2.1 support ends 21/08/2021)
-2. Core 3.1 -> .NET 5 (large upgrade window 10/11/2020 to 03/12/2022)
-3. .NET 5 -> .NET 6 (support for .NET 5 ends 3 months after .NET 6 is released ~10/11/2021)
-
-For more details on support lifecycles see [.NET Core and .NET Support Policy](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).
-
-An alternative road-map, remaining on LTS:
-
-1. Core 2.1 -> Core 3.1 (before 2.1 support ends 21/08/2021)
-2. Core 3.1 -> .NET 6 (upgrade window ~10/11/2021 to 03/12/2022)
+1. Core 3.1 -> .NET 6 (upgrade window November 2021 to 03/12/2022)
+2. .NET 5 -> .NET 6 (upgrade window November 2021 to May 2022)
+3. .NET 6 -> .NET 7 (.NET 7 is non-LTS 'Current', released November 2022)
+4. .NET 7 -> .NET 8 (upgrade window November 2022 to May 2024)
 
 ## 3. For new work
 
-The Long-Term Support (LTS) release of .NET Core is 3.1.
-
-The 'current' release from 10/11/2020 is .NET 5.
-
-Expect a similar decision process to the migrations discussed above.
+Use the Long-Term Support (LTS) release .NET 6, released November 2021.
 
 ## 4. Shared code libraries
 
 These will be utilised increasingly to break systems up for migration.
 
-In the long-term, expect most libraries internally and those on NuGet to multi-target .NET Standard 2.0 and .NET 5.
+In the long-term, expect most libraries internally, and those on NuGet, to multi-target .NET Standard 2.0 and .NET 5+.
 
-### What to target for a mix of NETFx, Core 2.1, Core 3.1 and .NET 5
+### What to target for a mix of NETFx, Core 3.1 and .NET 5+
 
 Many road-maps will upgrade parts of a system from NETFx, leaving some behind temporarily or permanently.
 
 Target .NET Standard 2.0 and ensure lowest target is .NET 4.7.2.
 
-Plan to add .NET 5 support later if and when the latest platform features are needed.
+Plan to add .NET 5+ support later if and when the latest platform features are needed.
 
-### What to target for a mix of .NET Core 3.1 / .NET 5
+### What to target for a mix of .NET Core 3.1 / .NET 5+
 
-Targeting .NET Standard 2.1 (the final version) will make the library usable by both. To actually utilise new .NET 5 features, consider multi-targeting Standard 2.1 and Core .NET 5.
+Targeting .NET Standard 2.1 (the final version) will make the library usable by both. To actually utilise new .NET 5+ features, consider multi-targeting Standard 2.1 and Core .NET 5+.
 
 ## 5. Future of running Core on the Framework
 
-ASP .NET Core 3.x and greater will not run on Framework. There might be implications for Core applications currently running on Framework, when 2.1 goes out of support. Not sure yet - there is extended support for running ASP .NET Core 2.1 on Framework that would see ASP .NET Core 2.1 related packages being supported indefinitely.
+ASP .NET Core 3.x and greater will not run on Framework.
+
+There is extended support for running ASP .NET Core 2.1 on Framework that would see ASP .NET Core 2.1 related packages being supported indefinitely. This is offered via support for particular packages, which are [listed here](https://dotnet.microsoft.com/platform/support/policy/aspnetcore-2.1). Note that packages must be kept up-to-date - only the latest patch versions are supported.
+
+See full [ASP.NET Support Policy](https://dotnet.microsoft.com/platform/support/policy/aspnet).
+
+This shouldn't be seen as a permanent solution - plan a migration onto the .NET Core / .NET 5+ runtime.
 
 ## 6. C# versions
 
@@ -205,4 +190,4 @@ C# 8.0 features are only officially supported in Core 3.x (and Standard 2.1) onw
 
 C# 9.0 features are only officially supported in .NET 5 onwards.
 
-A number of features work fully or partially in .NET Framework and .NET Core 2.1 with some manual project 'hacking' but the recommendation for UKHO .NET teams is not to use any C# 8 features outside of .NET Core 3.x and Standard 2.1+ projects.
+C# 10.0 features are only officially supported in .NET 6 onwards.
